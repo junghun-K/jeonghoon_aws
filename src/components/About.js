@@ -1,9 +1,9 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button} from '@mui/material'
-import {List, ListItem, ListItemText, ListItemAvatar} from '@mui/material';
+import {Grid, Paper, Link, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button} from '@mui/material'
+import { experimentalStyled as styled } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
-import ImageIcon from '@mui/icons-material/Image';
+import ScienceIcon from '@mui/icons-material/Science';
 import WorkIcon from '@mui/icons-material/Work';
 import SchoolIcon from '@mui/icons-material/School';
 import Timeline from '@mui/lab/Timeline';
@@ -13,11 +13,20 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-// import { fontSize } from '@mui/system';
+import DescriptionIcon from '@mui/icons-material/Description';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(5),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const pages = ['ABOUT', 'PROJECT'];
 const links = {'ABOUT': '/about', 
                'PROJECT': '/project'};
+const skills = ['Python', 'Pytorch', 'Tensorflow', 'Javascript', 'React', 'Node.js', 'HTML', 'CSS', 'Postman', 'SQL', 'Java', 'Docker', 'Git'];
 
 function About() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -132,7 +141,7 @@ function About() {
       </AppBar>
       <Container maxWidth={false}
       sx={{ 
-        marginTop: '10px',
+        marginTop: '50px',
         textAlign: 'center', 
         mx: '0px'
       }}>
@@ -140,28 +149,55 @@ function About() {
         <Container>
           <Typography variant='h4'
           sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6'}}>EXPERIENCE / EDUCATION</Typography>
-          <Timeline position="right">
+          <Timeline position="right" sx={{display:'flex', marginBottom: '0px'}}>
+            <TimelineItem sx={{display:'flex'}}>
+              <TimelineOppositeContent
+                sx={{ m: 'auto 0' }}
+                align="right"
+                variant="body2"
+                color="text.secondary"
+                fontSize='1.2rem'
+              >
+                Graduated May 2023
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot color="warning">
+                  <SchoolIcon />
+                </TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <Typography variant="h6" component="span" >
+                  <Link href="https://twin-cities.umn.edu/" underline="none">
+                  University of Minnesota, Twin-Cities</Link>
+                </Typography>
+                <Typography sx={{fontSize:'1rem'}}>B.S. Computer Science</Typography>
+              </TimelineContent>
+            </TimelineItem>
             <TimelineItem>
               <TimelineOppositeContent
                 sx={{ m: 'auto 0' }}
                 align="right"
                 variant="body2"
                 color="text.secondary"
+                fontSize='1.2rem'
               >
-                9:30 am
+                Jan 2023 - May 2023
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineConnector />
-                <TimelineDot>
-                  <ImageIcon />
+                <TimelineDot color="success">
+                  <ScienceIcon />
                 </TimelineDot>
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                  Eat
+                <Typography variant="h6" component="span" href="https://twin-cities.umn.edu/">
+                  <Link href="https://knowledge-computing.github.io" underline="none">
+                  Knowledge Computing Lab</Link>
                 </Typography>
-                <Typography>Because you need strength</Typography>
+                <Typography sx={{fontSize:'1rem'}}>Research Assistant</Typography>
               </TimelineContent>
             </TimelineItem>
             <TimelineItem>
@@ -169,75 +205,219 @@ function About() {
                 sx={{ m: 'auto 0' }}
                 variant="body2"
                 color="text.secondary"
+                fontSize='1.2rem'
               >
-                10:00 am
+                May 2022 - Sept 2022
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineConnector />
                 <TimelineDot color="primary">
-                  <ImageIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                  Code
-                </Typography>
-                <Typography>Because it&apos;s awesome!</Typography>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color="primary" variant="outlined">
-                  <ImageIcon />
-                </TimelineDot>
-                <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                  Sleep
-                </Typography>
-                <Typography>Because you need rest</Typography>
-              </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineSeparator>
-                <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                <TimelineDot color="secondary">
-                  <ImageIcon />
-                </TimelineDot>
-                <TimelineConnector />
-              </TimelineSeparator>
-              <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                  Repeat
-                </Typography>
-                <Typography>Because this is the life you love!</Typography>
-              </TimelineContent>
-            </TimelineItem>
-          </Timeline>
-          {/* <List sx={{ width: '100%', maxWidth: 700, margin: 'auto' }}>
-            <ListItem noWrap sx={{display: { xs: 'none', md: 'flex' }}} >
-              <Typography sx={{fontSize: '1.1rem'}}> ~ May 2023</Typography>
-              <ListItemAvatar>
-                <Avatar>
-                  <SchoolIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-            </ListItem>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar>
                   <WorkIcon />
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText primary="Work" secondary="Jan 7, 2014" />
-            </ListItem>
-            
-          </List> */}
+                </TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <Typography variant="h6" component="span">
+                <Link href="https://www.tesser.co.kr/" underline="none">
+                    Tesser</Link>
+                </Typography>
+                <Typography sx={{fontSize:'1rem'}}>Data Scientist</Typography>
+              </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+              <TimelineOppositeContent
+                sx={{ m: 'auto 0' }}
+                variant="body2"
+                color="text.secondary"
+                fontSize='1.2rem'
+              >
+                Mar 2021 - Dec 2021
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot color="primary">
+                  <WorkIcon />
+                </TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent sx={{ py: '12px', px: 2 }}>
+                <Typography variant="h6" component="span">
+                  <Link href="https://www.tesser.co.kr/" underline="none">
+                    Tesser</Link>
+                </Typography>
+                <Typography sx={{fontSize:'1rem'}}>Data Engineer</Typography>
+              </TimelineContent>
+            </TimelineItem> 
+          </Timeline>
+          <Button variant="outlined" startIcon={<DescriptionIcon />}>
+            Resume
+          </Button>
+
+        <Container sx={{marginTop: '80px', mx: '0px'}}>
+          <Typography variant='h4'
+          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', marginBottom: '30px'}}>
+            Skills
+          </Typography>
+          <Grid container spacing={2} sx={{display:'flex'}}>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png'}
+                alt='this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[0]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://pytorch.org/assets/images/pytorch-logo.png'}
+                alt='this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[1]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+            <img
+                src={'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-tensorflow-icon.png'}
+                alt='this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[2]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://www.freepnglogos.com/uploads/javascript-png/js-logo-png-5.png'}
+                alt='this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[3]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://user-images.githubusercontent.com/21227322/31187159-01c8d592-a8ff-11e7-9386-af708a7ae9de.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[4]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+            <img
+                src={'https://www.freepnglogos.com/uploads/javascript-png/javascript-nodejs-logo-27.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[5]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[6]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1200px-CSS3_logo.svg.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[7]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[8]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-five-advantages-disadvantages-mysql-4.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[9]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://assets.stickpng.com/thumbs/58480979cef1014c0b5e4901.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[10]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://assets.stickpng.com/images/62a9c7c08ff6441a2952dad3.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[11]}</Typography>
+            </Item>
+          </Grid>
+          <Grid item xs={2} md={4}>
+            <Item>
+              <img
+                src={'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png'}
+                alt= 'this image not availble'
+                loading="lazy"
+                width='75'
+                height='75'
+              />
+              <Typography>{skills[12]}</Typography>
+            </Item>
+          </Grid>
+        </Grid>
         </Container>
+      </Container>
       </Container>
     </Container>
   );

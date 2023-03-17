@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Project() {
-  return <h1>Project</h1>;
+  return <h1>To Be Updated</h1>;
 }

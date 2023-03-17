@@ -148,7 +148,7 @@ function About() {
         {/* Experience / Education */}
         <Container>
           <Typography variant='h4'
-          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6'}}>EXPERIENCE / EDUCATION</Typography>
+          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', letterSpacing: '3px'}}>EXPERIENCE / EDUCATION</Typography>
           <Timeline position="right" sx={{display:'flex', marginBottom: '0px'}}>
             <TimelineItem sx={{display:'flex'}}>
               <TimelineOppositeContent
@@ -255,8 +255,8 @@ function About() {
 
         <Container sx={{marginTop: '80px', mx: '0px'}}>
           <Typography variant='h4'
-          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', marginBottom: '30px'}}>
-            Skills
+          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', marginBottom: '30px', letterSpacing: '7px'}}>
+            SKILLS
           </Typography>
           <Grid container spacing={2} sx={{display:'flex'}}>
           <Grid item xs={2} md={4}>

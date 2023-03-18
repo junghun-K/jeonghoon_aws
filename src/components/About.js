@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Grid, Paper, Link, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button} from '@mui/material'
+import {Grid, Paper, Link, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Button} from '@mui/material'
 import { experimentalStyled as styled } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import ScienceIcon from '@mui/icons-material/Science';
@@ -14,6 +14,8 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import DescriptionIcon from '@mui/icons-material/Description';
+import Resume from './resume.pdf';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -249,13 +251,14 @@ function About() {
               </TimelineContent>
             </TimelineItem> 
           </Timeline>
-          <Button variant="outlined" startIcon={<DescriptionIcon />}>
-            Resume
+
+          <Button variant="outlined" href={Resume} target="_blank" startIcon={<DescriptionIcon />}>
+            resume
           </Button>
 
         <Container sx={{marginTop: '80px', mx: '0px'}}>
           <Typography variant='h4'
-          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', marginBottom: '30px', letterSpacing: '7px'}}>
+          sx={{fontSize: '1.3rem', fontWeight:'700', color: '#134db6', marginBottom: '30px', letterSpacing: '5px'}}>
             SKILLS
           </Typography>
           <Grid container spacing={2} sx={{display:'flex'}}>
@@ -263,7 +266,7 @@ function About() {
             <Item>
               <img
                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png'}
-                alt='this image not availble'
+                alt='Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -275,7 +278,7 @@ function About() {
             <Item>
               <img
                 src={'https://pytorch.org/assets/images/pytorch-logo.png'}
-                alt='this image not availble'
+                alt='Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -287,7 +290,7 @@ function About() {
             <Item>
             <img
                 src={'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-tensorflow-icon.png'}
-                alt='this image not availble'
+                alt='Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -299,7 +302,7 @@ function About() {
             <Item>
               <img
                 src={'https://www.freepnglogos.com/uploads/javascript-png/js-logo-png-5.png'}
-                alt='this image not availble'
+                alt='Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -311,7 +314,7 @@ function About() {
             <Item>
               <img
                 src={'https://user-images.githubusercontent.com/21227322/31187159-01c8d592-a8ff-11e7-9386-af708a7ae9de.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -323,7 +326,7 @@ function About() {
             <Item>
             <img
                 src={'https://www.freepnglogos.com/uploads/javascript-png/javascript-nodejs-logo-27.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -335,7 +338,7 @@ function About() {
             <Item>
               <img
                 src={'https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -347,7 +350,7 @@ function About() {
             <Item>
               <img
                 src={'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/1200px-CSS3_logo.svg.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -359,7 +362,7 @@ function About() {
             <Item>
               <img
                 src={'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -371,7 +374,7 @@ function About() {
             <Item>
               <img
                 src={'https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-five-advantages-disadvantages-mysql-4.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -383,7 +386,7 @@ function About() {
             <Item>
               <img
                 src={'https://assets.stickpng.com/thumbs/58480979cef1014c0b5e4901.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -395,7 +398,7 @@ function About() {
             <Item>
               <img
                 src={'https://assets.stickpng.com/images/62a9c7c08ff6441a2952dad3.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'
@@ -407,7 +410,7 @@ function About() {
             <Item>
               <img
                 src={'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png'}
-                alt= 'this image not availble'
+                alt= 'Not availble'
                 loading="lazy"
                 width='75'
                 height='75'

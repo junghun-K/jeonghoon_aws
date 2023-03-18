@@ -1,4 +1,3 @@
-// const http = require("http");
 const express = require("express");
 const path = require("path");
 
@@ -15,11 +14,11 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get("/*", (req, res) => {
-  res.set({
-    "Cache-Control": "no-cache, no-store, must-revalidate",
-    Pragma: "no-cache",
-    Date: Date.now()
-  });
+  // res.set({
+  //   "Cache-Control": "no-cache, no-store, must-revalidate",
+  //   Pragma: "no-cache",
+  //   Date: Date.now()
+  // });
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
